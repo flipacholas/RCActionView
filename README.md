@@ -16,7 +16,7 @@ White Style
 ![alert](Images/AlertViewWhite.gif =100x20)
 
 Black Style
-![alert](Images/AlertViewBlack.gif)
+![alert](Images/AlertViewBlack.gif =100x20)
 
 * RCSheetMenu
 
