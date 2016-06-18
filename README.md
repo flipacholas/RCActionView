@@ -9,24 +9,17 @@
 RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/sagiwei/SGActionView) written entirely in Swift. A customizable bottom menu, similar to Bottomsheet in Android. 
 
 
-### RCAlertMenu，Similar to UIAlertView
+### RCAlertMenu，similar to UIAlertView
 
- <li>
-<img src="Images/AlertViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
-<img src="Images/AlertViewBlack.gif" alt="Drawing" height="525px" width="357px" align="left"/>
- </li>
+<img src="Images/AlertViewWhite.gif" alt="Drawing" height="525px" width="357px"/> 
 
+### RCSheetMenu, uses UITableView delegates
 
-### RCSheetMenu 
- <li>
-<img src="Images/SheetViewWhite.gif" height="525px" height="525px" width="357px" align="left"/>
-<img src="Images/SheetViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
- </li>
-### RCGridMenu，Similar to UIActivityViewController
- <li>
-<img src="Images/GridViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
-<img src="Images/GridViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
- </li>
+<img src="Images/SheetViewWhite.gif" height="525px" height="525px" width="357px"/>
+
+### RCGridMenu，similar to UIActivityViewController
+
+<img src="Images/GridViewWhite.gif" alt="Drawing" height="525px" width="357px"/> 
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
