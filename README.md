@@ -13,7 +13,7 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 * RCAlertMenu，Similar to UIAlertView
 
 
-<img src="Images/AlertViewWhite.gif" alt="Drawing" style="width: 100px;"/>  <img src="Images/AlertViewBlack.gif" alt="Drawing" style="width: 100px;"/>
+<img src="Images/AlertViewWhite.gif" alt="Drawing" style="width: 50px;"/>  <img src="Images/AlertViewBlack.gif" alt="Drawing" style="width: 50px;"/>
 
 
 
