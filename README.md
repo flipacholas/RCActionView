@@ -11,7 +11,7 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 ## Uses
 
 * RCAlertMenu，Based on UIAlertView    
-![alert](Images/AlertViewWhite.png)
+![alert](Images/AlertViewWhite.gif)
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
