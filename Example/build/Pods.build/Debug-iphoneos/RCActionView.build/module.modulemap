@@ -1,0 +1,10 @@
+framework module RCActionView {
+  umbrella header "RCActionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module RCActionView.Swift {
+    header "RCActionView-Swift.h"
+}

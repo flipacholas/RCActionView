@@ -1,0 +1,22 @@
+{
+  "name": "RCActionView",
+  "version": "0.1.0",
+  "summary": "A short description of RCActionView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/RCActionView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Rodrigo": "busntour@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/RCActionView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "RCActionView/Classes/**/*"
+}

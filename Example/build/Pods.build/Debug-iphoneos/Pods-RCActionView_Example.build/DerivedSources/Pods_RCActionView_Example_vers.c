@@ -1,0 +1,1 @@
+ const unsigned char Pods_RCActionView_ExampleVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_RCActionView_Example  PROJECT:Pods-1" "\n"; const double Pods_RCActionView_ExampleVersionNumber __attribute__ ((used)) = (double)1.;
