@@ -10,8 +10,29 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 
 ## Uses
 
-* RCAlertMenu，Based on UIAlertView    
+* RCAlertMenu，Similar to UIAlertView
+
+White Style
 ![alert](Images/AlertViewWhite.gif)
+
+Black Style
+![alert](Images/AlertViewBlack.gif)
+
+* RCSheetMenu
+
+White Style
+![alert](Images/SheetViewWhite.gif)
+
+Black Style
+![alert](Images/SheetViewBlack.gif)
+
+* RCGridMenu，Similar to UIActivityViewController
+
+White Style
+![alert](Images/GridViewWhite.gif)
+
+Black Style
+![alert](Images/GridViewBlack.gif)
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
