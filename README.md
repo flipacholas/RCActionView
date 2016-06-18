@@ -8,12 +8,12 @@
 
 RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/sagiwei/SGActionView) written entirely in Swift. A customizable bottom menu, similar to Bottomsheet in Android. 
 
-## Uses
+## Action Views
 
 * RCAlertMenu，Similar to UIAlertView
 
 White Style
-![alert](Images/AlertViewWhite.gif)
+![alert](Images/AlertViewWhite.gif =100x20)
 
 Black Style
 ![alert](Images/AlertViewBlack.gif)
