@@ -1,7 +1,7 @@
 # RCActionView
 [![](http://img.shields.io/badge/iOS-8.0%2B-blue.svg)]()
 [![](http://img.shields.io/badge/Swift-2.0-blue.svg)]()
-[![CI Status](http://img.shields.io/travis/Rodrigo/RCActionView.svg?style=flat)](https://travis-ci.org/Rodrigo/RCActionView)
+[![CI Status](http://img.shields.io/travis/flipacholas/RCActionView.svg?style=flat)](https://travis-ci.org/Rodrigo/RCActionView)
 [![Version](https://img.shields.io/cocoapods/v/RCActionView.svg?style=flat)](http://cocoapods.org/pods/RCActionView)
 [![License](https://img.shields.io/cocoapods/l/RCActionView.svg?style=flat)](http://cocoapods.org/pods/RCActionView)
 [![Platform](https://img.shields.io/cocoapods/p/RCActionView.svg?style=flat)](http://cocoapods.org/pods/RCActionView)
