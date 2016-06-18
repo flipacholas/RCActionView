@@ -21,8 +21,44 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 
 <img src="Images/GridViewWhite.gif" alt="Drawing" height="525px" width="357px"/> 
 
-## Example
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Implementation
+
+You can use the example project, alternatively you can use the following methods:
+
+For RCAlertView:
+
+```swift
+RCActionView(style: .White)
+                    .showAlertWithTitle("Alert View",
+                                        message: "This is a amessage",
+                                        leftButtonTitle: "Cancel",
+                                        rightButtonTitle: "OK",
+                                        selectedHandle: { (selectedOption:Int) -> Void in
+self.doSomething(selectedOption) })
+```
+
+For RCSheetView:
+
+```swift
+ RCActionView(style: selectedStyle)
+                    .showSheetWithTitle("Sheet View",
+                                        itemTitles: ["Wedding Bell", "I'm Yours", "When I Was Your Man"],
+                                        itemSubTitles: ["Depapepe - Let's go!!!", "Jason Mraz", "Bruno Mars"],
+                                        selectedIndex: 0,
+                                        selectedHandle: { (selectedOption:Int) -> Void in
+self.doSomething(selectedOption) })
+```
+
+For RCGreedView:
+
+```swift
+RCActionView(style: selectedStyle)
+                    .showGridMenuWithTitle("Grid View",
+                                           itemTitles: ["Facebook", "Twitter", "Google+", "Linkedin", "Weibo", "WeChat", "Pocket", "Dropbox"],
+                                           images: [UIImage(named: "facebook")!, UIImage(named: "twitter")!, UIImage(named: "googleplus")!, UIImage(named: "linkedin")!, UIImage(named: "weibo")!, UIImage(named: "wechat")!, UIImage(named: "pocket")!, UIImage(named: "dropbox")!],
+                                           selectedHandle: { (selectedOption:Int) -> Void in
+self.doSomething(selectedOption) })
+```
 
 ## Requirements
 
@@ -35,9 +71,11 @@ it, simply add the following line to your Podfile:
 pod "RCActionView", '~> 1.0.0'
 ```
 
-## Author
+## Current projects using RCActionView
 
-Rodrigo, busntour@gmail.com
+[Bus n'Tour Mataró](https://itunes.apple.com/us/app/bus-ntour-mataro/id990772306)
+
+You can Pull Request to add your projects
 
 ## License
 
