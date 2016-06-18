@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/Rodrigo/Developer/Xcode Projects/Libraries/RCActionView/Example/build/Debug-iphoneos/RCActionView/RCActionView.framework/Modules'
+    'name': '/Users/Rodrigo/Documents/RCActionView/Example/build/Debug-iphoneos/RCActionView/RCActionView.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',
-      'external-contents': '/Users/Rodrigo/Developer/Xcode Projects/Libraries/RCActionView/Example/build/Pods.build/Debug-iphoneos/RCActionView.build/unextended-module.modulemap',
+      'external-contents': '/Users/Rodrigo/Documents/RCActionView/Example/build/Pods.build/Debug-iphoneos/RCActionView.build/unextended-module.modulemap',
     }]
   }]
 }

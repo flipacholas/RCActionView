@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BF432E51D15B13F00D12719 /* RCActionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF432E41D15B13F00D12719 /* RCActionView.framework */; };
+		5BF432E61D15B13F00D12719 /* RCActionView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF432E41D15B13F00D12719 /* RCActionView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -27,10 +29,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5BF432E71D15B13F00D12719 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BF432E61D15B13F00D12719 /* RCActionView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0ADA44867AD9746C31EAF1F8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		15B0FB3AC183DDA34CEDCA71 /* Pods_RCActionView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCActionView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B822E4A9F5B0A337958DC41 /* Pods-RCActionView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCActionView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCActionView_Example/Pods-RCActionView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5BF432E41D15B13F00D12719 /* RCActionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = RCActionView.framework; path = "/Users/Rodrigo/Library/Developer/Xcode/DerivedData/RCActionView-czmuecixsbtyekdmifnaayigisdj/Build/Products/Debug-iphonesimulator/RCActionView/RCActionView.framework"; sourceTree = "<absolute>"; };
 		607FACD01AFB9204008FA782 /* RCActionView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCActionView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BF432E51D15B13F00D12719 /* RCActionView.framework in Frameworks */,
 				8ED15140CBA8D6864D4EF434 /* Pods_RCActionView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +90,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				5BF432E41D15B13F00D12719 /* RCActionView.framework */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for RCActionView */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -172,6 +191,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				005F91619AD5E2F7748940AF /* [CP] Embed Pods Frameworks */,
 				314657D5B67484EC2F43BD1C /* [CP] Copy Pods Resources */,
+				5BF432E71D15B13F00D12719 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
