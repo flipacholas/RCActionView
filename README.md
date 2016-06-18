@@ -17,16 +17,16 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
  </li>
 
 
-# RCSheetMenu 
-
-<img src="Images/SheetViewWhite.gif" height="525px" width="357px"/> 
-<img src="Images/SheetViewBlack.gif" alt="Drawing" height="525px" width="357px"/>
-
-* RCGridMenu，Similar to UIActivityViewController
-
+### RCSheetMenu 
+ <li>
+<img src="Images/SheetViewWhite.gif" height="525px" height="525px" width="357px" align="left"/>
+<img src="Images/SheetViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
+ </li>
+### RCGridMenu，Similar to UIActivityViewController
+ <li>
 <img src="Images/GridViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
 <img src="Images/GridViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
-
+ </li>
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
