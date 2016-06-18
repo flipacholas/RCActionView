@@ -11,15 +11,15 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 ## Action Views
 
 * RCAlertMenu，Similar to UIAlertView
-
+ <li>
 <img src="Images/AlertViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
-<img src="Images/AlertViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
+<img src="Images/AlertViewBlack.gif" alt="Drawing" height="525px" width="357px" align="left"/>
+ </li>
 
+* RCSheetMenu 
 
-* RCSheetMenu
-
-<img src="Images/SheetViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
-<img src="Images/SheetViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
+<img src="Images/SheetViewWhite.gif" height="525px" width="357px"/> 
+<img src="Images/SheetViewBlack.gif" alt="Drawing" height="525px" width="357px"/>
 
 * RCGridMenu，Similar to UIActivityViewController
 
