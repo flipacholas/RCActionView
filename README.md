@@ -60,8 +60,6 @@ RCActionView(style: selectedStyle)
 self.doSomething(selectedOption) })
 ```
 
-## Requirements
-
 ## Installation
 
 RCActionView is available through [CocoaPods](http://cocoapods.org). To install
