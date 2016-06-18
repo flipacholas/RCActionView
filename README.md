@@ -12,27 +12,20 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 
 * RCAlertMenu，Similar to UIAlertView
 
-
-<img src="Images/AlertViewWhite.gif" alt="Drawing" style="height="50px" width="50px";"/> 
-<img src="Images/AlertViewBlack.gif" alt="Drawing" style="height="50px" width: 50px;"/>
-
+<img src="Images/AlertViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
+<img src="Images/AlertViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
 
 
 * RCSheetMenu
 
-White Style
-![alert](Images/SheetViewWhite.gif)
-
-Black Style
-![alert](Images/SheetViewBlack.gif)
+<img src="Images/SheetViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
+<img src="Images/SheetViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
 
 * RCGridMenu，Similar to UIActivityViewController
 
-White Style
-![alert](Images/GridViewWhite.gif)
+<img src="Images/GridViewWhite.gif" alt="Drawing" height="525px" width="357px" align="left"/> 
+<img src="Images/GridViewBlack.gif" alt="Drawing" height="525px" width="357px" align="right"/>
 
-Black Style
-![alert](Images/GridViewBlack.gif)
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
