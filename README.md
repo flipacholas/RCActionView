@@ -16,7 +16,8 @@ White Style
 <img src="Images/AlertViewWhite.gif" alt="Drawing" style="width: 200px;"/>
 
 Black Style
-![alert](Images/AlertViewBlack.gif =100x20)
+<img src="Images/AlertViewBlack.gif" alt="Drawing" style="width: 200px;"/>
+
 
 * RCSheetMenu
 
