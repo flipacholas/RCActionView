@@ -40,7 +40,7 @@ self.doSomething(selectedOption) })
 For RCSheetView:
 
 ```swift
- RCActionView(style: selectedStyle)
+ RCActionView(style: .White)
                     .showSheetWithTitle("Sheet View",
                                         itemTitles: ["Wedding Bell", "I'm Yours", "When I Was Your Man"],
                                         itemSubTitles: ["Depapepe - Let's go!!!", "Jason Mraz", "Bruno Mars"],
@@ -52,12 +52,24 @@ self.doSomething(selectedOption) })
 For RCGridView:
 
 ```swift
-RCActionView(style: selectedStyle)
+RCActionView(style: .White)
                     .showGridMenuWithTitle("Grid View",
                                            itemTitles: ["Facebook", "Twitter", "Google+", "Linkedin", "Weibo", "WeChat", "Pocket", "Dropbox"],
                                            images: [UIImage(named: "facebook")!, UIImage(named: "twitter")!, UIImage(named: "googleplus")!, UIImage(named: "linkedin")!, UIImage(named: "weibo")!, UIImage(named: "wechat")!, UIImage(named: "pocket")!, UIImage(named: "dropbox")!],
                                            selectedHandle: { (selectedOption:Int) -> Void in
 self.doSomething(selectedOption) })
+```
+
+The above examples use white styles, for black styles replace
+
+```swift
+RCActionView(style: .White)
+```
+
+With
+
+```swift
+RCActionView(style: .Black)
 ```
 
 ## Installation
@@ -68,6 +80,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "RCActionView", '~> 1.0.0'
 ```
+
+## Bug, improvements...
+
+You can open issues, pull requests... I will be happy to help
 
 ## Current projects using RCActionView
 
