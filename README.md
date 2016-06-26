@@ -28,7 +28,7 @@ You can use the example project, alternatively you can use the following methods
 For RCAlertView:
 
 ```swift
-RCActionView(style: .White)
+RCActionView(style: .Light)
                     .showAlertWithTitle("Alert View",
                                         message: "This is a amessage",
                                         leftButtonTitle: "Cancel",
@@ -40,7 +40,7 @@ self.doSomething(selectedOption) })
 For RCSheetView:
 
 ```swift
- RCActionView(style: .White)
+ RCActionView(style: .Light)
                     .showSheetWithTitle("Sheet View",
                                         itemTitles: ["Wedding Bell", "I'm Yours", "When I Was Your Man"],
                                         itemSubTitles: ["Depapepe - Let's go!!!", "Jason Mraz", "Bruno Mars"],
@@ -52,7 +52,7 @@ self.doSomething(selectedOption) })
 For RCGridView:
 
 ```swift
-RCActionView(style: .White)
+RCActionView(style: .Light)
                     .showGridMenuWithTitle("Grid View",
                                            itemTitles: ["Facebook", "Twitter", "Google+", "Linkedin", "Weibo", "WeChat", "Pocket", "Dropbox"],
                                            images: [UIImage(named: "facebook")!, UIImage(named: "twitter")!, UIImage(named: "googleplus")!, UIImage(named: "linkedin")!, UIImage(named: "weibo")!, UIImage(named: "wechat")!, UIImage(named: "pocket")!, UIImage(named: "dropbox")!],
@@ -63,7 +63,7 @@ self.doSomething(selectedOption) })
 The above examples use white styles, for black styles replace
 
 ```swift
-RCActionView(style: .White)
+RCActionView(style: .Light)
 ```
 
 With
