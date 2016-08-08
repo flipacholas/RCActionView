@@ -11,9 +11,9 @@ RCActionView is a reimplementation of [sagiwei/SGActionView](https://github.com/
 
 |               | Light | Black |
 | ------------- | ------------- | ------------- |
-| RCGridView  | <img src="Images/GridLight.tiff" alt="Drawing" height="525px" width="357px"/> | <img src="Images/GridBlack.tiff" alt="Drawing" height="525px" width="357px"/>  |
-| RCAlertView  | <img src="Images/AlertLight.tiff" alt="Drawing" height="525px" width="357px"/> | <img src="Images/AlertBlack.tiff" alt="Drawing" height="525px" width="357px"/>  |
-| RCSheetView  | <img src="Images/SheetLight.tiff" alt="Drawing" height="525px" width="357px"/> | <img src="Images/SheetBlack.tiff" alt="Drawing" height="525px" width="357px"/>  |
+| RCGridView  | <img src="Images/GridLight.png" alt="Drawing" height="525px" width="357px"/> | <img src="Images/GridBlack.png" alt="Drawing" height="525px" width="357px"/>  |
+| RCAlertView  | <img src="Images/AlertLight.png" alt="Drawing" height="525px" width="357px"/> | <img src="Images/AlertBlack.png" alt="Drawing" height="525px" width="357px"/>  |
+| RCSheetView  | <img src="Images/SheetLight.png" alt="Drawing" height="525px" width="357px"/> | <img src="Images/SheetBlack.png" alt="Drawing" height="525px" width="357px"/>  |
 
 
 ## Implementation
