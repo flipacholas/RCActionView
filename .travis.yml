@@ -1,5 +1,5 @@
 osx_image: xcode8
 language: objective-c
-script: xcodebuild -workspace Example/RCActionView.xcworkspace -scheme RCActionView -sdk iphonesimulator build test -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty -c && exit ${PIPESTATUS[0]} 
+script: xcodebuild -workspace Example/RCActionView.xcworkspace -scheme RCActionView-Example -sdk iphonesimulator build test -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty -c && exit ${PIPESTATUS[0]} 
 notifications:
   email: false
