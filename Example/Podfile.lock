@@ -1,5 +1,5 @@
 PODS:
-  - RCActionView (0.1.0)
+  - RCActionView (1.0.0)
 
 DEPENDENCIES:
   - RCActionView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RCActionView: fe59fcf6e2562c50fcee6e88e600bd13c9e5b8d6
+  RCActionView: e3a8f0e367d7717789bfcfff18c62c79ac4326fd
 
-PODFILE CHECKSUM: 23b235a96297f210448291b50c3a3cbd1717bf27
+PODFILE CHECKSUM: 1ed66d77c29765e252c5fe8733719ef4f671dc11
 
 COCOAPODS: 1.0.1
