@@ -73,7 +73,7 @@ RCActionView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "RCActionView", '~> 1.0.0'
+pod "RCActionView", '~> 2.0.0'
 ```
 
 ## Bug, improvements...
