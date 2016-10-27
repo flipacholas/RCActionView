@@ -11,19 +11,19 @@ import Foundation
 class RCGridItem: UIButton {
     
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
     }
     
     convenience init(title: String, image: UIImage, style: RCActionViewStyle?) {
         self.init()
         
         self.clipsToBounds = false
-        self.titleLabel!.font = UIFont.systemFontOfSize(13)
-        self.titleLabel!.backgroundColor = UIColor.clearColor()
-        self.titleLabel!.textAlignment = .Center
-        self.setTitle(title, forState: .Normal)
-        self.setTitleColor(RCBaseMenu.BaseMenuTextColor(style), forState: .Normal)
-        self.setImage(image, forState: .Normal)
+        self.titleLabel!.font = UIFont.systemFont(ofSize: 13)
+        self.titleLabel!.backgroundColor = UIColor.clear
+        self.titleLabel!.textAlignment = .center
+        self.setTitle(title, for: UIControlState())
+        self.setTitleColor(RCBaseMenu.BaseMenuTextColor(style), for: UIControlState())
+        self.setImage(image, for: UIControlState())
         
     }
     
@@ -33,12 +33,12 @@ class RCGridItem: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        var width = self.bounds.size.width
-        var height = self.bounds.size.height
-        var imageRect = CGRectMake(width * 0.2, width * 0.2, width * 0.6, width * 0.6)
+        let width = self.bounds.size.width
+        let height = self.bounds.size.height
+        let imageRect = CGRect(x: width * 0.2, y: width * 0.2, width: width * 0.6, height: width * 0.6)
         self.imageView!.frame = imageRect
-        var labelHeight = height - (imageRect.origin.y + imageRect.size.height)
-        var labelRect = CGRectMake(width * 0.05, imageRect.origin.y + imageRect.size.height, width * 0.9, labelHeight)
+        let labelHeight = height - (imageRect.origin.y + imageRect.size.height)
+        let labelRect = CGRect(x: width * 0.05, y: imageRect.origin.y + imageRect.size.height, width: width * 0.9, height: labelHeight)
         self.titleLabel!.frame = labelRect
     }
 }
@@ -60,9 +60,9 @@ class RCGridMenu: RCBaseMenu{
         self.itemTitles = []
         self.itemImages = []
         self.items = []
-        self.titleLabel = UILabel(frame: CGRectZero)
-        self.contentScrollView = UIScrollView(frame: CGRectZero)
-        self.cancelButton = RCButton(type: .Custom)
+        self.titleLabel = UILabel(frame: CGRect.zero)
+        self.contentScrollView = UIScrollView(frame: CGRect.zero)
+        self.cancelButton = RCButton(type: .custom)
         
         
         super.init(frame: frame)
@@ -71,7 +71,7 @@ class RCGridMenu: RCBaseMenu{
     }
     
     convenience init(title: String, itemTitles: [String], images: [UIImage], style: RCActionViewStyle) {
-        self.init(frame: UIScreen.mainScreen().bounds)
+        self.init(frame: UIScreen.main.bounds)
         var count: Int = min(itemTitles.count, images.count)
         self.titleLabel.text = title
         self.itemTitles = itemTitles
@@ -79,27 +79,27 @@ class RCGridMenu: RCBaseMenu{
         
         self.style = style
         
-        if (style == .Light){
-            self.cancelButton.setTitleColor(RCBaseMenu.BaseMenuActionTextColor(), forState: .Normal)
+        if (style == .light){
+            self.cancelButton.setTitleColor(RCBaseMenu.BaseMenuActionTextColor(), for: UIControlState())
         } else {
-            self.cancelButton.setTitleColor(RCBaseMenu.BaseMenuTextColor(self.style), forState: .Normal)
+            self.cancelButton.setTitleColor(RCBaseMenu.BaseMenuTextColor(self.style), for: UIControlState())
         }
         
         self.backgroundColor = RCBaseMenu.BaseMenuBackgroundColor(self.style)
-        self.titleLabel.backgroundColor = UIColor.clearColor()
-        self.titleLabel.font = UIFont.boldSystemFontOfSize(17)
-        self.titleLabel.textAlignment = .Center
+        self.titleLabel.backgroundColor = UIColor.clear
+        self.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        self.titleLabel.textAlignment = .center
         self.titleLabel.textColor = RCBaseMenu.BaseMenuTextColor(self.style)
         self.addSubview(titleLabel)
         self.contentScrollView.contentSize = contentScrollView.bounds.size
         self.contentScrollView.showsHorizontalScrollIndicator = false
         self.contentScrollView.showsVerticalScrollIndicator = true
-        self.contentScrollView.backgroundColor = UIColor.clearColor()
+        self.contentScrollView.backgroundColor = UIColor.clear
         self.addSubview(contentScrollView)
         self.cancelButton.clipsToBounds = true
-        self.cancelButton.titleLabel!.font = UIFont.systemFontOfSize(17)
-        cancelButton.addTarget(self, action: "tapAction:", forControlEvents: .TouchUpInside)
-        cancelButton.setTitle("Cancel", forState: .Normal)
+        self.cancelButton.titleLabel!.font = UIFont.systemFont(ofSize: 17)
+        cancelButton.addTarget(self, action: #selector(RCGridMenu.tapAction(_:)), for: .touchUpInside)
+        cancelButton.setTitle("Cancel", for: UIControlState())
         self.addSubview(cancelButton)
         
         self.setupWithItemTitles(itemTitles, images: itemImages)
@@ -112,12 +112,12 @@ class RCGridMenu: RCBaseMenu{
     }
     
     
-    func setupWithItemTitles(titles: [String], images: [UIImage]) {
+    func setupWithItemTitles(_ titles: [String], images: [UIImage]) {
         var items:[RCGridItem] = []
-        for var i = 0; i < titles.count; i++ {
-            var item: RCGridItem = RCGridItem(title: titles[i], image: images[i], style: style)
+        for i in 0 ..< titles.count {
+            let item: RCGridItem = RCGridItem(title: titles[i], image: images[i], style: style)
             item.tag = i
-            item.addTarget(self, action: "tapAction:", forControlEvents: .TouchUpInside)
+            item.addTarget(self, action: #selector(RCGridMenu.tapAction(_:)), for: .touchUpInside)
             items.append(item)
             contentScrollView.addSubview(item)
         }
@@ -126,52 +126,52 @@ class RCGridMenu: RCBaseMenu{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.titleLabel.frame = CGRect(origin: CGPointZero, size: CGSizeMake(self.bounds.size.width, 40))
+        self.titleLabel.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: self.bounds.size.width, height: 40))
         self.layoutContentScrollView()
-        self.contentScrollView.frame = CGRect(origin: CGPointMake(0, self.titleLabel.frame.size.height), size: self.contentScrollView.bounds.size)
-        self.cancelButton.frame = CGRectMake(self.bounds.size.width * 0.05, self.titleLabel.bounds.size.height + self.contentScrollView.bounds.size.height, self.bounds.size.width * 0.9, 44)
-        self.bounds = CGRect(origin: CGPointZero, size: CGSizeMake(self.bounds.size.width, self.titleLabel.bounds.size.height + self.contentScrollView.bounds.size.height + self.cancelButton.bounds.size.height))
+        self.contentScrollView.frame = CGRect(origin: CGPoint(x: 0, y: self.titleLabel.frame.size.height), size: self.contentScrollView.bounds.size)
+        self.cancelButton.frame = CGRect(x: self.bounds.size.width * 0.05, y: self.titleLabel.bounds.size.height + self.contentScrollView.bounds.size.height, width: self.bounds.size.width * 0.9, height: 44)
+        self.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: self.bounds.size.width, height: self.titleLabel.bounds.size.height + self.contentScrollView.bounds.size.height + self.cancelButton.bounds.size.height))
     }
     
     func layoutContentScrollView() {
-        var margin: UIEdgeInsets = UIEdgeInsetsMake(0, 10, 15, 10)
-        var itemSize: CGSize = CGSizeMake((self.bounds.size.width - margin.left - margin.right) / 4, 85)
-        var itemCount: Int = self.items.count
-        var rowCount: Int = ((itemCount - 1) / 4) + 1
-        self.contentScrollView.contentSize = CGSizeMake(self.bounds.size.width, CGFloat(rowCount) * itemSize.height + margin.top + margin.bottom)
-        for var i = 0; i < itemCount; i++ {
-            var item: RCGridItem = self.items[i]
-            var row: Int = i / 4
-            var column: Int = i % 4
-            var p: CGPoint = CGPointMake(margin.left + CGFloat(column) * itemSize.width, margin.top + CGFloat(row) * itemSize.height)
+        let margin: UIEdgeInsets = UIEdgeInsetsMake(0, 10, 15, 10)
+        let itemSize: CGSize = CGSize(width: (self.bounds.size.width - margin.left - margin.right) / 4, height: 85)
+        let itemCount: Int = self.items.count
+        let rowCount: Int = ((itemCount - 1) / 4) + 1
+        self.contentScrollView.contentSize = CGSize(width: self.bounds.size.width, height: CGFloat(rowCount) * itemSize.height + margin.top + margin.bottom)
+        for i in 0 ..< itemCount {
+            let item: RCGridItem = self.items[i]
+            let row: Int = i / 4
+            let column: Int = i % 4
+            let p: CGPoint = CGPoint(x: margin.left + CGFloat(column) * itemSize.width, y: margin.top + CGFloat(row) * itemSize.height)
             item.frame = CGRect(origin: p, size: itemSize)
             item.layoutIfNeeded()
         }
         if self.contentScrollView.contentSize.height > kMAX_CONTENT_SCROLLVIEW_HEIGHT {
-            self.contentScrollView.bounds = CGRect(origin: CGPointZero,size: CGSizeMake(self.bounds.size.width, kMAX_CONTENT_SCROLLVIEW_HEIGHT))
+            self.contentScrollView.bounds = CGRect(origin: CGPoint.zero,size: CGSize(width: self.bounds.size.width, height: kMAX_CONTENT_SCROLLVIEW_HEIGHT))
         }
         else {
-            self.contentScrollView.bounds = CGRect(origin: CGPointZero, size: self.contentScrollView.contentSize)
+            self.contentScrollView.bounds = CGRect(origin: CGPoint.zero, size: self.contentScrollView.contentSize)
         }
     }
     
-    func triggerSelectedAction(actionHandle: (NSInteger) -> Void) {
+    func triggerSelectedAction(_ actionHandle: @escaping (NSInteger) -> Void) {
         self.actionHandle = actionHandle
     }
     
-    func tapAction(sender: AnyObject) {
+    func tapAction(_ sender: AnyObject) {
         if let handle = actionHandle {
             if sender.isEqual(self.cancelButton) {
-                var delayInSeconds: Double = 0.15
-                var popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue(), {() -> Void in
+                let delayInSeconds: Double = 0.15
+                let popTime: DispatchTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime, execute: {() -> Void in
                     self.actionHandle!(0)
                 })
             }
             else {
-                var delayInSeconds: Double = 0.15
-                var popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue(), {() -> Void in
+                let delayInSeconds: Double = 0.15
+                let popTime: DispatchTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime, execute: {() -> Void in
                     self.actionHandle!(sender.tag + 1)
                 })
             }

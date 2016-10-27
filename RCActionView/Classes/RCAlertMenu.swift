@@ -24,12 +24,12 @@ class RCAlertMenu: RCBaseMenu {
     }
     
     convenience init(title: String, message: String, buttonTitles: [String], style:RCActionViewStyle) {
-        self.init(frame: UIScreen.mainScreen().bounds)
+        self.init(frame: UIScreen.main.bounds)
         self.style = style
         
         var actionButtonTitles = buttonTitles
         if (buttonTitles.count > 2) {
-            actionButtonTitles.removeRange(Range(start: 2,end: actionButtonTitles.count))
+            actionButtonTitles.removeSubrange((2 ..< actionButtonTitles.count))
         }
         self.setupWithTitle(title, message: message, actionTitles: actionButtonTitles)
     }
@@ -39,38 +39,38 @@ class RCAlertMenu: RCBaseMenu {
     }
     
     
-    func setupWithTitle(title: String, message: String, actionTitles: [String]) {
+    func setupWithTitle(_ title: String, message: String, actionTitles: [String]) {
         self.backgroundColor = RCBaseMenu.BaseMenuBackgroundColor(self.style)
         if title != "" {
-            self.titleLabel = UILabel(frame: CGRectZero)
-            self.titleLabel.backgroundColor = UIColor.clearColor()
-            self.titleLabel.font = UIFont.boldSystemFontOfSize(17)
-            self.titleLabel.textAlignment = .Center
+            self.titleLabel = UILabel(frame: CGRect.zero)
+            self.titleLabel.backgroundColor = UIColor.clear
+            self.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+            self.titleLabel.textAlignment = .center
             self.titleLabel.textColor = RCBaseMenu.BaseMenuTextColor(self.style)
             self.titleLabel.text = title
             self.addSubview(titleLabel)
         }
         
         if message != "" {
-            self.messageLabel = UILabel(frame: CGRectZero)
-            self.messageLabel.backgroundColor = UIColor.clearColor()
-            self.messageLabel.font = UIFont.systemFontOfSize(15)
-            self.messageLabel.textAlignment = .Left
+            self.messageLabel = UILabel(frame: CGRect.zero)
+            self.messageLabel.backgroundColor = UIColor.clear
+            self.messageLabel.font = UIFont.systemFont(ofSize: 15)
+            self.messageLabel.textAlignment = .left
             self.messageLabel.textColor = RCBaseMenu.BaseMenuTextColor(self.style)
             self.messageLabel.numberOfLines = 0
             self.messageLabel.text = message
             self.addSubview(messageLabel)
         }
         
-        for (var i = 0; i < actionTitles.count; i++) {
+        for i in (0 ..< actionTitles.count) {
             var title: String = actionTitles[i]
-            var actionButton: RCButton = RCButton(type: .Custom)
+            var actionButton: RCButton = RCButton(type: .custom)
             actionButton.tag = i
             actionButton.clipsToBounds = true
-            actionButton.titleLabel?.font = UIFont.systemFontOfSize(16)
-            actionButton.setTitleColor(RCBaseMenu.BaseMenuActionTextColor(), forState: .Normal)
-            actionButton.setTitle(title, forState: .Normal)
-            actionButton.addTarget(self, action: "tapAction:", forControlEvents: .TouchUpInside)
+            actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            actionButton.setTitleColor(RCBaseMenu.BaseMenuActionTextColor(), for: UIControlState())
+            actionButton.setTitle(title, for: UIControlState())
+            actionButton.addTarget(self, action: #selector(RCAlertMenu.tapAction(_:)), for: .touchUpInside)
             self.addSubview(actionButton)
             self.actionButtons.append(actionButton)
         }
@@ -84,42 +84,42 @@ class RCAlertMenu: RCBaseMenu {
         var message_top_margin: CGFloat = 0
         var message_bottom_margin: CGFloat = (self.messageLabel.text != nil) ? 15 : 0
         height += title_top_margin
-        if self.titleLabel != "" {
-            self.titleLabel.frame = CGRect(origin: CGPointMake(0, height), size: CGSizeMake(self.bounds.size.width, 50))
+        if self.titleLabel.text != "" {
+            self.titleLabel.frame = CGRect(origin: CGPoint(x: 0, y: height), size: CGSize(width: self.bounds.size.width, height: 50))
             height += self.titleLabel.bounds.size.height + self.titleLabel.frame.origin.y
         }
         
         height += message_top_margin
-        if messageLabel != "" {
-            var s: CGSize = CGSizeMake(self.bounds.size.width * 0.9, 1000)
+        if messageLabel.text != "" {
+            var s: CGSize = CGSize(width: self.bounds.size.width * 0.9, height: 1000)
             s = self.messageLabel.sizeThatFits(s)
-            self.messageLabel.frame = CGRect(origin: CGPointMake(self.bounds.size.width * 0.05, height), size: s)
+            self.messageLabel.frame = CGRect(origin: CGPoint(x: self.bounds.size.width * 0.05, y: height), size: s)
             height += s.height
         }
         height += message_bottom_margin
         var btn_y: CGFloat = height
-        for var i = 0; i < self.actionButtons.count; i++ {
+        for i in 0 ..< self.actionButtons.count {
             var button: UIButton = self.actionButtons[i]
-            button.frame = CGRect(origin: CGPointMake(CGFloat(i) * self.bounds.size.width / 2, btn_y), size: CGSizeMake(self.bounds.size.width / CGFloat(self.actionButtons.count), 44))
+            button.frame = CGRect(origin: CGPoint(x: CGFloat(i) * self.bounds.size.width / 2, y: btn_y), size: CGSize(width: self.bounds.size.width / CGFloat(self.actionButtons.count), height: 44))
             if i == 0 {
                 height += 44
             }
         }
-        self.bounds = CGRect(origin: CGPointZero, size: CGSizeMake(self.bounds.size.width, height))
+        self.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: self.bounds.size.width, height: height))
         
     }
     
-    func triggerSelectedAction(actionHandle: RCMenuActionHandler) {
+    func triggerSelectedAction(_ actionHandle: @escaping RCMenuActionHandler) {
         self.actionHandle = actionHandle
     }
     
-    func tapAction(sender: AnyObject) {
+    func tapAction(_ sender: AnyObject) {
         if (sender is UIButton) {
-            var tag: Int = (sender as! UIButton).tag
-            var delayInSeconds: Double = 0.15
-            var popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-            dispatch_after(popTime, dispatch_get_main_queue(), {() -> Void in
-                self.actionHandle!(index: tag)
+            let tag: Int = (sender as! UIButton).tag
+            let delayInSeconds: Double = 0.15
+            let popTime: DispatchTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: popTime, execute: {() -> Void in
+                self.actionHandle!(tag)
             })
         }
     }

@@ -12,22 +12,22 @@ import QuartzCore
 
 class RCButton: UIButton {
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         willSet(newValue) {
-            super.selected = newValue;
+            super.isSelected = newValue;
             highlight(newValue)
         }
     }
     
-    func highlight(highlighted: Bool) {
+    func highlight(_ highlighted: Bool) {
         if highlighted {
-            self.backgroundColor = UIColor.lightGrayColor()
+            self.backgroundColor = UIColor.lightGray
         }
         else {
-            var delayInSeconds: Double = 0.2
-            var popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-            dispatch_after(popTime, dispatch_get_main_queue(), {() -> Void in
-                self.backgroundColor = UIColor.clearColor()
+            let delayInSeconds: Double = 0.2
+            let popTime: DispatchTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: popTime, execute: {() -> Void in
+                self.backgroundColor = UIColor.clear
             })
         }
     }
@@ -39,7 +39,7 @@ class RCBaseMenu: UIView {
     var style: RCActionViewStyle
     
     override init(frame: CGRect) {
-        self.style = .Light
+        self.style = .light
         super.init(frame: frame)
         
         setRoundedCorner(self.nicePerformance())
@@ -51,19 +51,19 @@ class RCBaseMenu: UIView {
     }
     
     
-    static func BaseMenuBackgroundColor(style:RCActionViewStyle?) -> UIColor{
-        if (style == RCActionViewStyle.Light){
+    static func BaseMenuBackgroundColor(_ style:RCActionViewStyle?) -> UIColor{
+        if (style == RCActionViewStyle.light){
             return UIColor(white: 1.0, alpha: 1.0)
         } else{
             return UIColor(white: 0.2, alpha: 1.0)
         }
     }
     
-    static func BaseMenuTextColor(style:RCActionViewStyle?) -> UIColor{
-        if (style == RCActionViewStyle.Light){
-            return UIColor.darkTextColor()
+    static func BaseMenuTextColor(_ style:RCActionViewStyle?) -> UIColor{
+        if (style == RCActionViewStyle.light){
+            return UIColor.darkText
         } else{
-            return UIColor.lightTextColor()
+            return UIColor.lightText
         }
     }
     
@@ -73,12 +73,12 @@ class RCBaseMenu: UIView {
     
     
     
-    func setRoundedCorner(roundedCorner: Bool) {
+    func setRoundedCorner(_ roundedCorner: Bool) {
         if roundedCorner {
-            var path: UIBezierPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSizeMake(8, 8))
-            var maskLayer: CAShapeLayer = CAShapeLayer()
+            let path: UIBezierPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 8, height: 8))
+            let maskLayer: CAShapeLayer = CAShapeLayer()
             maskLayer.frame = self.bounds
-            maskLayer.path = path.CGPath
+            maskLayer.path = path.cgPath
             self.layer.mask = maskLayer
         }
         else {
@@ -91,19 +91,19 @@ class RCBaseMenu: UIView {
     func nicePerformance() -> Bool {
         var size : Int = 0
         sysctlbyname("hw.machine", nil, &size, nil, 0)
-        var name = [CChar](count: Int(size), repeatedValue: 0)
+        var name = [CChar](repeating: 0, count: Int(size))
         sysctlbyname("hw.machine", &name, &size, nil, 0)
-        var machine: NSString = String.fromCString(name)!
+        var machine: NSString = String(describing: name) as NSString
         
         var b: Bool = true
         if machine.hasPrefix("iPhone") {
-            b = CInt(machine.substringWithRange(NSRange(location: 6, length: 1)))! >= 4
+            b = CInt(machine.substring(with: NSRange(location: 6, length: 1)))! >= 4
         }
         else if machine.hasPrefix("iPod") {
-            b = CInt(machine.substringWithRange(NSMakeRange(4, 1)))! >= 5
+            b = CInt(machine.substring(with: NSMakeRange(4, 1)))! >= 5
         }
         else if machine.hasPrefix("iPad") {
-            b = CInt(machine.substringWithRange(NSMakeRange(4, 1)))! >= 2
+            b = CInt(machine.substring(with: NSMakeRange(4, 1)))! >= 2
         }
         
         return b
